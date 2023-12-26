@@ -11,21 +11,21 @@
             <x-input-error :messages="$errors->get('desired_date')" class="mt-2" />
         </div>
 
-        <p class="my-2 text-xs font-bold text-gray-600">*Onze levertermijn is 48h werkdagen na bestelling voor 16h in België;
+        <p class="my-2 text-xs font-bold text-gray-600">*Onze levertermijn is 48h werkdagen na bestelling voor 16h in
+            België;
             onder vbh van stock en zonder engagement.</p>
 
-            @if ($hasPreviousOrder)
+        @if ($hasPreviousOrder)
             <div class="flex items-center mb-4">
                 <input wire:click='$refresh' wire:model="previous_order" id="previous_order" type="checkbox"
                     class="h-4 w-4 text-[#338734] border-[#338734] rounded focus:ring-green-500">
                 <label for="return_package" class="block ml-2 text-sm text-gray-900">Herhaal vorige bestelling</label>
             </div>
-            @endif
-        
+        @endif
+
 
         @if (!$previous_order)
             @foreach ($quotes as $index => $quote)
-         
                 <div class="flex items-center mb-4 space-x-4">
                     <div class="flex-1">
                         <label class="block text-sm font-medium text-gray-700">Artikel</label>
@@ -44,7 +44,9 @@
                             class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500"
                             min="0" required>
                           
+
                     </div>
+                   
                     <div class="flex-1">
                         <label class="block text-sm font-medium text-gray-700">Verpakking</label>
                         <select wire:model="quotes.{{ $index }}.packaging"
@@ -63,6 +65,12 @@
                         </button>
                     @endif
                 </div>
+                <div class="flex justify-center">
+                    <x-input-error :messages="$errors->get('quotes.' . $index . '.volume')" class="mt-2" />
+                </div>
+                
+                
+                
             @endforeach
 
             <div class="flex justify-start">
@@ -78,26 +86,26 @@
                 <label for="address" class="block mb-2 text-sm font-bold text-gray-700">LEVERADRES</label>
                 <input wire:model='delivery_address' type="text" id="address" name="address"
                     class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline focus:ring-red-500 focus:border-red-500">
-                    <x-input-error :messages="$errors->get('delivery_address')" class="mt-2" />
-                </div>
+                <x-input-error :messages="$errors->get('delivery_address')" class="mt-2" />
+            </div>
             <div class="w-full px-2 mb-4 md:w-1/4">
                 <label for="number" class="block mb-2 text-sm font-bold text-gray-700">NUMMER</label>
                 <input wire:model='address_number' type="text" id="number" name="number"
                     class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline focus:ring-red-500 focus:border-red-500">
-                    <x-input-error :messages="$errors->get('address_number')" class="mt-2" />
-                </div>
+                <x-input-error :messages="$errors->get('address_number')" class="mt-2" />
+            </div>
             <div class="w-full px-2 mb-4 md:w-1/2">
                 <label for="postcode" class="block mb-2 text-sm font-bold text-gray-700">POSTCODE</label>
                 <input wire:model='postcode' type="text" id="postcode" name="postcode"
                     class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline focus:ring-red-500 focus:border-red-500">
-                    <x-input-error :messages="$errors->get('postcode')" class="mt-2" />
-                </div>
+                <x-input-error :messages="$errors->get('postcode')" class="mt-2" />
+            </div>
             <div class="w-full px-2 mb-4 md:w-1/2">
                 <label for="city" class="block mb-2 text-sm font-bold text-gray-700">STAD/GEMEENTE</label>
                 <input wire:model='city' type="text" id="city" name="city"
                     class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline focus:ring-red-500 focus:border-red-500">
-                    <x-input-error :messages="$errors->get('city')" class="mt-2" />
-                </div>
+                <x-input-error :messages="$errors->get('city')" class="mt-2" />
+            </div>
         </div>
 
         <div class="mb-4">

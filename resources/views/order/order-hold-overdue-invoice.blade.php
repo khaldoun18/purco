@@ -39,7 +39,7 @@
             </div>
 
             <div class="container px-10 mx-auto my-6 bg-white">
-               
+
 
                 <h1 class="py-6 text-xs">We stellen vast dat volgende factuur vervallen is: #F0001. Uw bestelling kan
                     worden behandeld 24u nadat u het vervallen factuur heeft betaald. Gelieve
@@ -47,8 +47,10 @@
             </div>
 
             <div class="flex justify-center">
-                <button class="bg-[#CC181B] text-white px-4 py-2 hover:bg-white hover:text-[#CC181B] border-2 hover:border-[#CC181B]">Bekijk facturen</button>
-               
+                <button
+                    class="bg-[#CC181B] text-white px-4 py-2 hover:bg-white hover:text-[#CC181B] border-2 hover:border-[#CC181B]">Bekijk
+                    facturen</button>
+
             </div>
 
         </div>
@@ -59,6 +61,6 @@
 
     </div>
     <livewire:layout.image>
-    <livewire:layout.footer>
+        <livewire:layout.footer>
 
 </x-app-layout>

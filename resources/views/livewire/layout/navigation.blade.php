@@ -34,11 +34,11 @@ new class extends Component {
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
-                    <x-nav-link class="h-10" :href="route('quote')" :active="request()->routeIs('quote')" wire:navigate>
+                    <x-nav-link class="h-10" :href="route('quote')" :active="request()->routeIs(['quote','quote-success'])" wire:navigate>
                         {{ __('Offerte aanvragen') }}
                     </x-nav-link>
 
-                    <x-nav-link class="h-10" :href="route('order')" :active="request()->routeIs('order')" wire:navigate>
+                    <x-nav-link class="h-10" :href="route('order')" :active="request()->routeIs(['order','order-success','order-hold-insufficient-credit','order-hold-overdue-invoice'])" wire:navigate>
                         {{ __('Bestel nu') }}
                     </x-nav-link>
 
