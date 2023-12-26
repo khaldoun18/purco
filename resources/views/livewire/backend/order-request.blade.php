@@ -1,4 +1,4 @@
-<div class="px-[200px] max-small:px-5">
+<div class="px-[150px] max-small:px-5">
     <h1 class="mb-6 text-3xl font-bold text-center">Bestel nu</h1>
 
     <form wire:submit.prevent="submit">
@@ -43,10 +43,10 @@
                         <input wire:model="quotes.{{ $index }}.volume" type="text"
                             class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500"
                             min="0" required>
-                          
+
 
                     </div>
-                   
+
                     <div class="flex-1">
                         <label class="block text-sm font-medium text-gray-700">Verpakking</label>
                         <select wire:model="quotes.{{ $index }}.packaging"
@@ -68,9 +68,6 @@
                 <div class="flex justify-center">
                     <x-input-error :messages="$errors->get('quotes.' . $index . '.volume')" class="mt-2" />
                 </div>
-                
-                
-                
             @endforeach
 
             <div class="flex justify-start">
@@ -115,7 +112,7 @@
         </div>
         <x-input-error :messages="$errors->get('remarks')" class="" />
 
-        <div class="flex items-center mb-4">
+        <div class="flex items-center mt-8 mb-4">
             <input wire:model="return_package" id="return_package" type="checkbox"
                 class="h-4 w-4 text-[#338734] border-[#338734] rounded focus:ring-green-500">
             <label for="return_package" class="block ml-2 text-sm text-gray-900">Ik ga akkoord met de algemene
@@ -124,7 +121,7 @@
 
 
 
-        <div class="flex items-center mb-4">
+        <div class="flex items-center mt-4">
             <input wire:model="acceptTerms" id="acceptTerms" type="checkbox"
                 class="h-4 w-4 text-[#338734] border-[#338734] rounded focus:ring-green-500">
             <label for="acceptTerms" class="block w-full ml-2 text-sm text-gray-900">Verpakking (lege IBC) mee retour
@@ -134,10 +131,9 @@
         <x-input-error :messages="$errors->get('acceptTerms')" class="" />
 
 
-        <div class="flex justify-center">
+        <div class="my-8">
             <button type="submit"
-                class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-[#CC181B] hover:bg-red-600 focus:outline-none disabled:bg-red-300"
-                :disabled="!acceptTerms">
+                class="inline-flex items-center px-6 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-[#CC181B] hover:bg-red-600 focus:outline-none ">
                 Offerte aanvragen
             </button>
         </div>

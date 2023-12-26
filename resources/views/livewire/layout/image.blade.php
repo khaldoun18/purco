@@ -6,7 +6,7 @@ use function Livewire\Volt\{state};
 
 ?>
 
-<div class="container px-4 py-12 mx-auto sm:px-6 lg:px-8">
+<div class="py-12 ">
     <div class="flex flex-wrap -mx-4 overflow-hidden">
         <!-- Left side image (full width on small screens, 2/3 on medium screens and above) -->
         <div class="w-full px-4 my-4 overflow-hidden sm:w-full md:w-2/3 lg:w-2/3 xl:w-2/3">

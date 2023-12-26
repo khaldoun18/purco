@@ -71,7 +71,7 @@ use function Livewire\Volt\{state};
     </div>
     <hr class="border-1 border-[#313131]">
 
-    <div class="container flex justify-between mx-auto mt-3">
+    <div class="flex justify-between px-4 mt-3 lg:px-16">
         <h1 class="text-sm text-muted">© Purco 2023-Webdesign <a href="https://www.webit.be" target="_blank"
                 rel="noopener noreferrer">Webit</a></h1>
         <h1 class="text-sm text-muted"><a href="">Privacy</a> | <a href="">Cookiebeleid</a></h1>

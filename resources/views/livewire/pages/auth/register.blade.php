@@ -11,7 +11,7 @@ use Livewire\Volt\Component;
 use Ibericode\Vat\Validator as VatValidator;
 use Axlon\PostalCodeValidation\Rules\PostalCode;
 
-new #[Layout('layouts.guest')] class extends Component {
+new #[Layout('layouts.app')] class extends Component {
     public string $first_name = '';
     public string $last_name = '';
     public string $phone_number = '';
@@ -72,7 +72,7 @@ new #[Layout('layouts.guest')] class extends Component {
 }; ?>
 
 <div>
-    <div class="container mx-auto medium:px-[100px] px-[50px]">
+    <div class="container mx-auto medium:px-[100px] large:px-[80px] px-[50px] py-4">
         <div class="flex my-12 text-red-600">
             <a class="flex items-center ml-2 font-bold" href="{{ route('welcome') }}" wire:navigate>
                 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +93,7 @@ new #[Layout('layouts.guest')] class extends Component {
                 <div class="grid grid-cols-1 gap-x-8 medium:grid-cols-2">
                     <!-- First Name -->
                     <div class="mt-4">
-                        <x-input-label for="first_name" :value="__('Voornaam')" />
+                        <x-input-label  for="first_name" :value="__('Voornaam')" />
                         <x-text-input wire:model="first_name" id="first_name" class="block w-full mt-1" type="text"
                             name="first_name" required />
                         <x-input-error :messages="$errors->get('first_name')" class="mt-2" />
@@ -222,7 +222,7 @@ new #[Layout('layouts.guest')] class extends Component {
                 </div>
 
                 <!-- Checkbox for Acceptance -->
-                <div class="mt-4">
+                <div class="my-6">
                     <label for="accept" class="flex items-center gap-x-2">
                         <input id="accept" type="checkbox" wire:click="$refresh" wire:model="accept"
                             class="text-[#338734] border-gray-300 rounded form-checkbox focus:ring-[#338734]">
@@ -232,15 +232,15 @@ new #[Layout('layouts.guest')] class extends Component {
                 </div>
 
 
-                <div class="my-4">
+                <div class="my-6">
                     <x-primary-button :disabled="!$accept"
-                        class="{{ $accept ? 'bg-[#338734] hover:bg-green-500' : 'bg-gray-500 cursor-not-allowed' }}">
+                        class="{{ $accept ? 'bg-[#338734] hover:bg-green-500' : ' cursor-not-allowed' }}">
                         {{ __('Registreer') }}
                     </x-primary-button>
 
 
                     <div class="my-4 font-black text-medium">Heb je al een account?
-                        <a class="text-sm underline rounded-md text-[#338734] hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        <a class="text-[16px] underline rounded-md text-[#338734] hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                             href="{{ route('login') }}" wire:navigate>
                             {{ __('Log In') }}
                         </a>

@@ -1,6 +1,6 @@
 <div>
     <section class="mt-10">
-        <div class="max-w-screen-xl px-4 mx-auto lg:px-12">
+        <div class="">
             <!-- Start coding here -->
             @if (count($orders) > 0)
                 <div class="relative my-6 overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
@@ -95,7 +95,7 @@
                             </thead>
                             <tbody>
                                 @foreach ($orders as $key => $order)
-                                    <tr class="text-center border-b dark:border-gray-700">
+                                    <tr class="text-left border-b dark:border-gray-700">
                                         <th scope="row"
                                             class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                             {{ $key + 1 }}
@@ -172,7 +172,7 @@
                                             </td>
                                         @endif
 
-                                        <td class="flex items-center justify-end px-4 py-3">
+                                        <td class="">
                                             <button class="px-3 py-1 "><svg width="21" height="20"
                                                     viewBox="0 0 21 20" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">

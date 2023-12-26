@@ -15,6 +15,8 @@ export default {
       
         extend: {
 
+          
+
             screens: {
                 'small': '640px',
                 // => @media (min-width: 640px) { ... }
@@ -37,7 +39,7 @@ export default {
               },
             
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Roboto', 'sans-serif'],
             },
         },
     },

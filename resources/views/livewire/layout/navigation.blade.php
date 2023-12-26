@@ -15,30 +15,38 @@ new class extends Component {
     }
 }; ?>
 
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="">
     <!-- Primary Navigation Menu -->
     <div class="px-4 lg:px-16">
-        <div class="flex justify-between">
-            <div class="flex items-center h-16 shrink-0">
-                <a href="{{ route('dashboard') }}" wire:navigate>
-                    <x-application-logo class="block w-auto text-gray-800 fill-current h-9" />
-                </a>
-            </div>
+        <div class="flex items-center justify-between h-[80px]">
+            <a href="{{ route('dashboard') }}" wire:navigate>
+                <x-application-logo class="block w-auto text-gray-800 fill-current h-9" />
+            </a>
             <div class="flex ">
-                <!-- Logo -->
+
+            </div>
+
+
+            <div class="flex ">
+
 
 
                 <!-- Navigation Links -->
-                <div class="items-center hidden space-x-8 lg:-my-px lg:ms-10 lg:flex whitespace-nowrap">
+                <div class="items-center hidden space-x-8 lg:-my-px lg:ms-10 lg:flex whitespace-nowrap lg:justify-end">
                     <x-nav-link class="h-10" :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
-                    <x-nav-link class="h-10" :href="route('quote')" :active="request()->routeIs(['quote','quote-success'])" wire:navigate>
+                    <x-nav-link class="h-10" :href="route('quote')" :active="request()->routeIs(['quote', 'quote-success'])" wire:navigate>
                         {{ __('Offerte aanvragen') }}
                     </x-nav-link>
 
-                    <x-nav-link class="h-10" :href="route('order')" :active="request()->routeIs(['order','order-success','order-hold-insufficient-credit','order-hold-overdue-invoice'])" wire:navigate>
+                    <x-nav-link class="h-10" :href="route('order')" :active="request()->routeIs([
+                        'order',
+                        'order-success',
+                        'order-hold-insufficient-credit',
+                        'order-hold-overdue-invoice',
+                    ])" wire:navigate>
                         {{ __('Bestel nu') }}
                     </x-nav-link>
 
@@ -57,54 +65,61 @@ new class extends Component {
 
             <!-- Settings Dropdown -->
             <div class="hidden lg:flex lg:items-center lg:ms-6 whitespace-nowrap">
-                <x-dropdown align="right" width="48">
-                    <x-slot name="trigger">
-                        <button
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none">
-                            <div class="flex items-center">
-                                <!-- Initials circle -->
-                                <div
-                                    class="flex items-center justify-center w-8 h-8 text-white bg-green-600 rounded-full">
+                @auth
+                    <x-dropdown align="right" width="48">
+                        <x-slot name="trigger">
+                            <button
+                                class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none">
+                                <div class="flex items-center">
+                                    <!-- Initials circle -->
+                                    <div
+                                        class="flex items-center justify-center w-8 h-8 text-white bg-green-600 rounded-full">
+                                        <div x-data="{
+                                            first_name: '{{ auth()->user()->first_name }}',
+                                            last_name: '{{ auth()->user()->last_name }}'
+                                        }"
+                                            x-text="`${first_name.substring(0,1)}${last_name.substring(0,1)}`.toUpperCase()">
+                                        </div>
+                                    </div>
+                                    <!-- User's full name -->
                                     <div x-data="{
                                         first_name: '{{ auth()->user()->first_name }}',
                                         last_name: '{{ auth()->user()->last_name }}'
-                                    }"
-                                        x-text="`${first_name.substring(0,1)}${last_name.substring(0,1)}`.toUpperCase()">
+                                    }" x-text="`${first_name} ${last_name}`"
+                                        x-on:profile-updated.window="first_name = $event.detail.first_name; last_name = $event.detail.last_name"
+                                        class="ml-2 font-semibold">
                                     </div>
+                                    <!-- Dropdown icon -->
+                                    <svg class="w-4 h-4 ml-1 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd" />
+                                    </svg>
                                 </div>
-                                <!-- User's full name -->
-                                <div x-data="{
-                                    first_name: '{{ auth()->user()->first_name }}',
-                                    last_name: '{{ auth()->user()->last_name }}'
-                                }" x-text="`${first_name} ${last_name}`"
-                                    x-on:profile-updated.window="first_name = $event.detail.first_name; last_name = $event.detail.last_name"
-                                    class="ml-2 font-semibold">
-                                </div>
-                                <!-- Dropdown icon -->
-                                <svg class="w-4 h-4 ml-1 fill-current" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </div>
 
-                        </button>
-                    </x-slot>
+                            </button>
+                        </x-slot>
 
-                    <x-slot name="content">
-                        <x-dropdown-link :href="route('profile')" wire:navigate>
-                            {{ __('Profile') }}
-                        </x-dropdown-link>
-
-                        <!-- Authentication -->
-                        <button wire:click="logout" class="w-full text-start">
-                            <x-dropdown-link>
-                                {{ __('Log Out') }}
+                        <x-slot name="content">
+                            <x-dropdown-link :href="route('profile')" wire:navigate>
+                                {{ __('Profile') }}
                             </x-dropdown-link>
-                        </button>
-                    </x-slot>
-                </x-dropdown>
+
+                            <!-- Authentication -->
+                            <button wire:click="logout" class="w-full text-start">
+                                <x-dropdown-link>
+                                    {{ __('Log Out') }}
+                                </x-dropdown-link>
+                            </button>
+                        </x-slot>
+                    </x-dropdown>
+                @else
+                    <x-nav-link class="h-10 " :href="route('login')" wire:navigate>
+                        {{ __('Login') }}
+                    </x-nav-link>
+                @endauth
+
             </div>
 
             <!-- Hamburger -->
@@ -145,24 +160,31 @@ new class extends Component {
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="px-4">
-                <div class="text-base font-medium text-gray-800" x-data="{{ json_encode(['name' => auth()->user()->name]) }}" x-text="name"
-                    x-on:profile-updated.window="name = $event.detail.name"></div>
-                <div class="text-sm font-medium text-gray-500">{{ auth()->user()->email }}</div>
-            </div>
+            @auth
+                <div class="px-4">
+                    <div class="text-base font-medium text-gray-800" x-data="{{ json_encode(['name' => auth()->user()->name]) }}" x-text="name"
+                        x-on:profile-updated.window="name = $event.detail.name"></div>
+                    <div class="text-sm font-medium text-gray-500">{{ auth()->user()->email }}</div>
+                </div>
 
-            <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile')" wire:navigate>
-                    {{ __('Profile') }}
-                </x-responsive-nav-link>
-
-                <!-- Authentication -->
-                <button wire:click="logout" class="w-full text-start">
-                    <x-responsive-nav-link>
-                        {{ __('Log Out') }}
+                <div class="mt-3 space-y-1">
+                    <x-responsive-nav-link :href="route('profile')" wire:navigate>
+                        {{ __('Profile') }}
                     </x-responsive-nav-link>
-                </button>
-            </div>
+
+                    <!-- Authentication -->
+                    <button wire:click="logout" class="w-full text-start">
+                        <x-responsive-nav-link>
+                            {{ __('Log Out') }}
+                        </x-responsive-nav-link>
+                    </button>
+                </div>
+            @else
+                <div class="px-4">
+                    <a class="text-md" href="{{ route('login') }}" wire:navigate>Login</a>
+                </div>
+            @endauth
+
         </div>
     </div>
 </nav>
