@@ -64,7 +64,7 @@ new #[Layout('layouts.app')] class extends Component {
                     <input id="remember_me" type="checkbox"
                         class="text-[#338734] border-gray-300 rounded form-checkbox focus:ring-[#338734]"
                         wire:model="form.remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    <span class="ml-2 text-sm ">{{ __('Remember me') }}</span>
                 </label>
             </div>
 

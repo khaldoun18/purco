@@ -188,7 +188,7 @@ new #[Layout('layouts.app')] class extends Component {
                                 autocomplete="new-password" />
                             <div class="absolute inset-y-0 right-0 flex items-center px-2">
                                 <button type="button" x-on:click="showPassword = !showPassword"
-                                    class="text-gray-700 focus:outline-none">
+                                    class=" focus:outline-none">
                                     <i class="fas"
                                         x-bind:class="{ 'fa-eye': !showPassword, 'fa-eye-slash': showPassword }"></i>
                                 </button>

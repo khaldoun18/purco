@@ -180,9 +180,9 @@ new class extends Component {
                     </button>
                 </div>
             @else
-                <div class="px-4">
-                    <a class="text-md" href="{{ route('login') }}" wire:navigate>Login</a>
-                </div>
+            <x-responsive-nav-link :href="route('login')"  wire:navigate>
+                {{ __('Login') }}
+            </x-responsive-nav-link>
             @endauth
 
         </div>

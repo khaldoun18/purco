@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="px-[150px] max-small:px-5 py-[80px]">
 
-        <h1 class="mb-6 text-3xl font-bold text-center">Bestel nu</h1>
+        <h1 class="mb-12 text-[32px] font-bold text-center">Bestel nu</h1>
 
         <div class="flex justify-center py-10">
 

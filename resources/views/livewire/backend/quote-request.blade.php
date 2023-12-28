@@ -1,8 +1,8 @@
 <div class="px-[150px] max-small:px-5">
-    <h1 class="mb-12 text-3xl font-bold text-center">Offerte aanvragen</h1>
+    <h1 class="mb-12 text-[32px] font-bold text-center">Offerte aanvragen</h1>
 
     <form wire:submit.prevent="submit">
-        <h1 class="my-4 text-xl font-black">Overzicht offerteaanvraag</h1>
+        <h1 class="my-4 text-[20px] font-bold">Overzicht offerteaanvraag</h1>
         <div class="mb-4">
             <label for="desired_date" class="block text-sm font-medium text-gray-700">Gewenste levertermijn*</label>
             <input wire:model="desired_date" id="desired_date" type="date"
@@ -50,6 +50,9 @@
                         Verwijder
                     </button>
                 @endif
+            </div>
+            <div class="flex justify-center">
+                <x-input-error :messages="$errors->get('quotes.' . $index . '.volume')" class="mt-2" />
             </div>
         @endforeach
 

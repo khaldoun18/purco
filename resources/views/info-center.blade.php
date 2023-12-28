@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class=" py-[80px]">
-        <h1 class="mb-[60px] text-3xl font-bold text-center">Info Center</h1>
+        <h1 class="mb-[60px] text-[32px] font-bold text-center">Info Center</h1>
 
         <div class="">
             <div class="flex flex-col px-4 md:flex-row">
@@ -37,20 +37,20 @@
             </div>
             <div class="py-8">
                 <div class="overflow-hidden border-b border-gray-200 rounded shadow">
-                    <table class="mx-auto bg-white">
+                    <table class="mx-auto bg-white border-2 border-[#F7F7FC]">
                         <thead class="bg-gray-50">
-                            <tr>
-                                <th class="px-4 py-3 text-sm font-semibold text-center uppercase">Datum</th>
-                                <th class="px-4 py-3 text-sm font-semibold text-center uppercase">Titel document</th>
-                                <th class="px-4 py-3 text-sm font-semibold text-center uppercase">Download</th>
+                            <tr class="border-2">
+                                <th class="px-4 py-3 border-2 text-sm font-semibold text-center ">Datum</th>
+                                <th class="px-4 py-3 border-2 text-sm font-semibold text-center ">Titel document</th>
+                                <th class="px-4 py-3 border-2 text-sm font-semibold text-center">Download</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-700">
 
                             <tr>
-                                <td class="px-4 py-3 text-center">06/01/2023</td>
-                                <td class="px-4 py-3 text-center">Offerte: Lorem ipsum</td>
-                                <td class="flex justify-center px-4 py-3">
+                                <td class="px-4 py-3 border-2 text-center">06/01/2023</td>
+                                <td class="px-4 py-3 border-2 text-center">Offerte: Lorem ipsum</td>
+                                <td class="flex justify-center  px-4 py-3">
                                     <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -61,9 +61,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-4 py-3 text-center">06/01/2023</td>
-                                <td class="px-4 py-3 text-center">Offerte: Lorem ipsum</td>
-                                <td class="flex justify-center px-4 py-3">
+                                <td class="px-4 py-3 border-2 text-center">06/01/2023</td>
+                                <td class="px-4 border-2 py-3 text-center">Offerte: Lorem ipsum</td>
+                                <td class="flex justify-center px-4 border-t-2 py-3">
                                     <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -74,9 +74,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="px-4 py-3 text-center">06/01/2023</td>
-                                <td class="px-4 py-3 text-center">Offerte: Lorem ipsum</td>
-                                <td class="flex justify-center px-4 py-3">
+                                <td class="px-4 py-3 border-2 text-center">06/01/2023</td>
+                                <td class="px-4 py-3 border-2 text-center">Offerte: Lorem ipsum</td>
+                                <td class="flex  justify-center px-4 border-t-2 py-3">
                                     <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path

@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="py-[80px]">
         <div class="px-[200px] max-small:px-5">
-            <h1 class="mb-6 text-3xl font-bold text-center">Offerte aanvragen</h1>
+            <h1 class="mb-12 text-[32px] font-bold text-center">Offerte aanvragen</h1>
 
             <div class="flex justify-center py-10">
 

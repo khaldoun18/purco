@@ -1,8 +1,8 @@
 <div class="px-[150px] max-small:px-5">
-    <h1 class="mb-6 text-3xl font-bold text-center">Bestel nu</h1>
+    <h1 class="mb-12 text-[32px] font-bold text-center">Bestel nu</h1>
 
     <form wire:submit.prevent="submit">
-        <h1 class="my-4 text-xl font-black">Mijn bestelling</h1>
+        <h1 class="my-4 text-[20px] font-bold">Mijn bestelling</h1>
         <div class="mb-4">
             <label for="desired_date" class="block text-sm font-medium text-gray-700">Gewenste levertermijn*</label>
             <input wire:model="desired_date" id="desired_date" type="date"
