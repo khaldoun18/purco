@@ -76,6 +76,24 @@
                     + Artikel toevoegen
                 </button>
             </div>
+        @else
+            @foreach ($this->getProcessedQuotes() as $processedQuote)
+                <div class="flex items-center space-x-4 my-[24px]">
+                    <div class="flex-1">
+                        <label class="block text-sm font-medium text-gray-700">Artikel</label>
+                        <h1 class="mt-1 text-gray-600">{{ $processedQuote['product_name'] }}</h1>
+                    </div>
+                    <div class="flex-1">
+                        <label class="block text-sm font-medium text-gray-700">Volume (KG)</label>
+                        <h1 class="mt-1 text-gray-600">{{ $processedQuote['volume'] }}</h1>
+                    </div>
+                    <div class="flex-1">
+                        <label class="block text-sm font-medium text-gray-700">Verpakking</label>
+                        <h1 class="mt-1 text-gray-600">{{ $processedQuote['packaging'] }}</h1>
+                    </div>
+                </div>
+            @endforeach
+
 
         @endif
         <div class="flex flex-wrap">

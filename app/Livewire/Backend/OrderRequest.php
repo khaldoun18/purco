@@ -39,16 +39,28 @@ class OrderRequest extends Component
         $this->addQuote();
     }
 
+    public function getProcessedQuotes()
+    {
+        return collect($this->quotes)->map(function ($quote) {
+            $product = collect($this->products)->firstWhere('id', $quote['product']);
+            return [
+                'product_name' => $product['name'] ?? 'N/A',
+                'volume' => $quote['volume'] ?? 'N/A',
+                'packaging' => $quote['packaging'] ?? 'N/A',
+            ];
+        });
+    }
+
     public function updatedPreviousOrder($value)
     {
         if ($value) {
             // Fetch the last order and its items
             $lastOrder = Order::where('user_id', Auth::id())->latest()->first();
-    
+
             if ($lastOrder && $lastOrder->orderItems) {
                 // Clear the current quotes
                 $this->quotes = [];
-    
+
                 // Repopulate quotes with the last order items
                 foreach ($lastOrder->orderItems as $item) {
                     $this->quotes[] = [
@@ -58,16 +70,15 @@ class OrderRequest extends Component
                     ];
                 }
             } else {
-                
+
                 $this->quotes = [];
-                
             }
         } else {
-            
+
             $this->quotes = [['product' => '', 'volume' => '', 'packaging' => '']];
         }
     }
-    
+
 
     public function addQuote()
     {
@@ -81,21 +92,21 @@ class OrderRequest extends Component
     }
 
     private function generateOrderNumber()
-{
-    $year = date('y'); // Current year in two digits
-    $prefix = "{$year}-" . random_int(10, 99); // e.g., "22-66"
-    $uniquePart = random_int(1000, 9999); // 4-digit random number
+    {
+        $year = date('y'); // Current year in two digits
+        $prefix = "{$year}-" . random_int(10, 99); // e.g., "22-66"
+        $uniquePart = random_int(1000, 9999); // 4-digit random number
 
-    $orderNumber = "{$prefix}-{$uniquePart}";
-
-    // Check if the generated order number already exists in the database
-    while (Order::where('order_number', $orderNumber)->exists()) {
-        $uniquePart = random_int(1000, 9999);
         $orderNumber = "{$prefix}-{$uniquePart}";
-    }
 
-    return $orderNumber;
-}
+        // Check if the generated order number already exists in the database
+        while (Order::where('order_number', $orderNumber)->exists()) {
+            $uniquePart = random_int(1000, 9999);
+            $orderNumber = "{$prefix}-{$uniquePart}";
+        }
+
+        return $orderNumber;
+    }
 
     public function submit()
     {
@@ -107,10 +118,10 @@ class OrderRequest extends Component
             'remarks' => 'nullable|string',
             'acceptTerms' => 'accepted',
             'return_package' => 'boolean',
-            'delivery_address'=>'required|min:5',
-            'address_number'=>'required',
+            'delivery_address' => 'required|min:5',
+            'address_number' => 'required',
             'postcode' => ['required', 'string', 'max:255', PostalCode::for('LB')->or('BE')],
-            'city'=>'required'
+            'city' => 'required'
         ]);
 
         try {
@@ -129,8 +140,8 @@ class OrderRequest extends Component
                 'postcode' => $this->postcode,
                 'city' => $this->city,
                 'order_number' => $orderNumber,
-                'status'=>'placed',
-                'payment'=>'waiting',
+                'status' => 'placed',
+                'payment' => 'waiting',
             ]);
 
             foreach ($this->quotes as $quote) {
@@ -151,7 +162,6 @@ class OrderRequest extends Component
             session(['order_success' => true]);
 
             return $this->redirect(route('order-success'), navigate: true);
-    
         } catch (\Exception $e) {
             DB::rollback();
             session()->flash('error', 'There was an error placing the order: ' . $e->getMessage());
@@ -161,6 +171,6 @@ class OrderRequest extends Component
     {
         $hasPreviousOrder = Order::where('user_id', Auth::id())->exists();
 
-        return view('livewire.backend.order-request' ,compact('hasPreviousOrder'));
+        return view('livewire.backend.order-request', compact('hasPreviousOrder'));
     }
 }
