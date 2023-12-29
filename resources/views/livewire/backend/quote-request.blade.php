@@ -1,9 +1,9 @@
-<div class="px-[150px] max-small:px-5">
-    <h1 class="mb-12 text-[32px] font-bold text-center">Offerte aanvragen</h1>
+<div class="w-[856px]">
+    <h1 class="sm:text-[32px] text-2xl font-bold text-center mb-[48px]">Offerte aanvragen</h1>
 
     <form wire:submit.prevent="submit">
-        <h1 class="my-4 text-[20px] font-bold">Overzicht offerteaanvraag</h1>
-        <div class="mb-4">
+        <h1 class=" text-[20px] font-bold">Overzicht offerteaanvraag</h1>
+        <div class="my-[20px]">
             <label for="desired_date" class="block text-sm font-medium text-gray-700">Gewenste levertermijn*</label>
             <input wire:model="desired_date" id="desired_date" type="date"
                 class="block w-40 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500"
@@ -15,7 +15,7 @@
             onder vbh van stock en zonder engagement.</p>
 
         @foreach ($quotes as $index => $quote)
-            <div class="flex items-center mb-4 space-x-4">
+            <div class="flex items-center space-x-4 my-[24px] whitespace-nowrap">
                 <div class="flex-1">
                     <label class="block text-sm font-medium text-gray-700">Artikel</label>
                     <select wire:model="quotes.{{ $index }}.product"
@@ -56,21 +56,21 @@
             </div>
         @endforeach
 
-        <div class="flex justify-start">
+        <div class="flex justify-start mb-[24px]">
             <button wire:click.prevent="addQuote" type="button"
                 class="text-[#338734] hover:text-green-700 underline underline-offset-2">
                 + Artikel toevoegen
             </button>
         </div>
 
-        <div class="my-4">
+        <div class="mb-[20px]">
             <label for="remarks" class="block text-sm font-medium text-gray-700">Opmerkingen</label>
             <textarea wire:model="remarks" id="remarks" rows="4"
                 class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500"></textarea>
         </div>
         <x-input-error :messages="$errors->get('remarks')" class="" />
 
-        <div class="flex items-center mt-8 mb-4">
+        <div class="flex items-center mb-[16px]">
             <input wire:model="return_package" id="return_package" type="checkbox"
                 class="h-4 w-4 text-[#338734] border-[#338734] rounded focus:ring-green-500">
             <label for="return_package" class="block ml-2 text-sm text-gray-900">Ik ga akkoord met de algemene
@@ -79,7 +79,7 @@
 
 
 
-        <div class="flex items-center mt-4">
+        <div class="flex items-center ">
             <input wire:model="acceptTerms" id="acceptTerms" type="checkbox"
                 class="h-4 w-4 text-[#338734] border-[#338734] rounded focus:ring-green-500">
             <label for="acceptTerms" class="block w-full ml-2 text-sm text-gray-900">Verpakking (lege IBC) mee retour
@@ -89,7 +89,7 @@
         <x-input-error :messages="$errors->get('acceptTerms')" class="" />
 
 
-        <div class="my-8">
+        <div class="mt-[32px] mb-[30px]">
            
             <button type="submit"
                 class="inline-flex items-center px-6 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-[#CC181B] hover:bg-red-600 focus:outline-none ">

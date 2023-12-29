@@ -1,9 +1,9 @@
-<div class="px-[150px] max-small:px-5">
-    <h1 class="mb-12 text-[32px] font-bold text-center">Bestel nu</h1>
+<div class="max-w-[856px]">
+    <h1 class="sm:text-[32px] text-2xl font-bold text-center mb-[48px]">Bestel nu</h1>
 
     <form wire:submit.prevent="submit">
-        <h1 class="my-4 text-[20px] font-bold">Mijn bestelling</h1>
-        <div class="mb-4">
+        <h1 class="text-[20px] font-bold">Mijn bestelling</h1>
+        <div class="my-[20px]">
             <label for="desired_date" class="block text-sm font-medium text-gray-700">Gewenste levertermijn*</label>
             <input wire:model="desired_date" id="desired_date" type="date"
                 class="block w-40 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500"
@@ -11,7 +11,7 @@
             <x-input-error :messages="$errors->get('desired_date')" class="mt-2" />
         </div>
 
-        <p class="my-2 text-xs font-bold text-gray-600">*Onze levertermijn is 48h werkdagen na bestelling voor 16h in
+        <p class="my-6 text-xs font-bold text-gray-600">*Onze levertermijn is 48h werkdagen na bestelling voor 16h in
             België;
             onder vbh van stock en zonder engagement.</p>
 
@@ -26,7 +26,7 @@
 
         @if (!$previous_order)
             @foreach ($quotes as $index => $quote)
-                <div class="flex items-center mb-4 space-x-4">
+                <div class="flex items-center space-x-4 my-[24px] whitespace-nowrap">
                     <div class="flex-1">
                         <label class="block text-sm font-medium text-gray-700">Artikel</label>
                         <select wire:model="quotes.{{ $index }}.product"
@@ -70,7 +70,7 @@
                 </div>
             @endforeach
 
-            <div class="flex justify-start">
+            <div class="flex justify-start mb-[24px]">
                 <button wire:click.prevent="addQuote" type="button"
                     class="text-[#338734] hover:text-green-700 underline underline-offset-2">
                     + Artikel toevoegen

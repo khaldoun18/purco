@@ -1,10 +1,11 @@
 <x-app-layout>
-    <div class="container mx-auto py-[80px]">
+    <div class="container mx-auto sm:p-[72px] p-[37px] flex justify-center">
         <livewire:backend.order-request>
-            <livewire:layout.image>
+           
 
 
     </div>
+    <livewire:layout.image>
     <livewire:layout.footer>
 
 </x-app-layout>

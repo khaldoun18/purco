@@ -1,9 +1,10 @@
 <x-app-layout>
-    <div class="px-[150px] max-small:px-5 py-[80px]">
+   <div class="py-[80px]">
+    <div class="container mx-auto sm:px-[72px] px-[37px]">
 
-        <h1 class="mb-12 text-[32px] font-bold text-center">Bestel nu</h1>
+        <h1 class="sm:text-[32px] text-2xl font-bold text-center">Bestel nu</h1>
 
-        <div class="flex justify-center py-10">
+        <div class="flex justify-center py-[48px]">
 
             <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_32_4678)">
@@ -22,31 +23,32 @@
         </div>
 
         <div class="mb-8 text-center">
-            <button href="{{ route('order') }}" wire:navigate class="py-3 px-4 bg-[#F1AF33] text-black text-sm">
+            <button href="{{ route('order') }}" wire:navigate class="py-3 px-4 bg-[#F1AF33] text-black text-sm font-semibold">
                 Bestelling on hold. Zie hieronder.
 
             </button>
-            <div class="my-6 text-lg font-black text-[#C33D1F] flex justify-center gap-2">
-                <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M12.5 22.75C6.572 22.75 1.75 17.928 1.75 12C1.75 6.072 6.572 1.25 12.5 1.25C18.428 1.25 23.25 6.072 23.25 12C23.25 17.928 18.428 22.75 12.5 22.75ZM12.5 2.75C7.399 2.75 3.25 6.899 3.25 12C3.25 17.101 7.399 21.25 12.5 21.25C17.601 21.25 21.75 17.101 21.75 12C21.75 6.899 17.601 2.75 12.5 2.75ZM13.52 15.5C13.52 14.948 13.073 14.5 12.52 14.5H12.51C11.958 14.5 11.5149 14.948 11.5149 15.5C11.5149 16.052 11.968 16.5 12.52 16.5C13.072 16.5 13.52 16.052 13.52 15.5ZM13.25 12.071V7.5C13.25 7.086 12.914 6.75 12.5 6.75C12.086 6.75 11.75 7.086 11.75 7.5V12.071C11.75 12.485 12.086 12.821 12.5 12.821C12.914 12.821 13.25 12.485 13.25 12.071Z"
-                        fill="#C33D1F" />
-                </svg>
-                <h1 class="font-black">
-                    Opgelet: vervallen facturen
-                </h1>
+            <div class="flex flex-col items-center gap-[46px] ">
+                <div class="mt-6 text-lg font-black text-[#C33D1F] flex justify-center ">
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.5 22.75C6.572 22.75 1.75 17.928 1.75 12C1.75 6.072 6.572 1.25 12.5 1.25C18.428 1.25 23.25 6.072 23.25 12C23.25 17.928 18.428 22.75 12.5 22.75ZM12.5 2.75C7.399 2.75 3.25 6.899 3.25 12C3.25 17.101 7.399 21.25 12.5 21.25C17.601 21.25 21.75 17.101 21.75 12C21.75 6.899 17.601 2.75 12.5 2.75ZM13.52 15.5C13.52 14.948 13.073 14.5 12.52 14.5H12.51C11.958 14.5 11.5149 14.948 11.5149 15.5C11.5149 16.052 11.968 16.5 12.52 16.5C13.072 16.5 13.52 16.052 13.52 15.5ZM13.25 12.071V7.5C13.25 7.086 12.914 6.75 12.5 6.75C12.086 6.75 11.75 7.086 11.75 7.5V12.071C11.75 12.485 12.086 12.821 12.5 12.821C12.914 12.821 13.25 12.485 13.25 12.071Z"
+                            fill="#C33D1F" />
+                    </svg>
+                    <h1 class="font-bold">
+                        Opgelet: vervallen facturen
+                    </h1>
+                </div>
+
+                <div class="max-w-[420px]">
+
+                    <h1 class="text-[12px]">We stellen vast dat volgende factuur vervallen is: #F0001. Uw bestelling kan
+                        worden behandeld 24u nadat u het vervallen factuur heeft betaald. Gelieve
+                        per afzonderlijke e-mail betaling te bevestigen.</h1>
+                </div>
             </div>
 
-            <div class="container px-10 mx-auto my-6 bg-white">
-
-
-                <h1 class="py-6 text-xs">We stellen vast dat volgende factuur vervallen is: #F0001. Uw bestelling kan
-                    worden behandeld 24u nadat u het vervallen factuur heeft betaald. Gelieve
-                    per afzonderlijke e-mail betaling te bevestigen.</h1>
-            </div>
-
-            <div class="flex justify-center">
+            <div class="flex justify-center mt-[48px]">
                 <button
                     class="bg-[#CC181B] text-white px-4 py-2 hover:bg-white hover:text-[#CC181B] border-2 hover:border-[#CC181B]">Bekijk
                     facturen</button>
@@ -60,6 +62,7 @@
 
 
     </div>
+   </div>
     <livewire:layout.image>
         <livewire:layout.footer>
 

@@ -3,18 +3,18 @@
         <div class="">
             <!-- Start coding here -->
             @if (count($orders) > 0)
-                <div class="relative my-6 overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
+                <div class="relative overflow-hidden bg-white sm:rounded-lg">
                     <div class="flex items-center justify-between p-4 d">
 
 
                     </div>
                     <div class="overflow-x-auto whitespace-nowrap">
                         <table
-                            class="w-full text-sm text-left text-gray-500 border-[#DBDADE] border-2 dark:text-gray-400">
+                            class="w-full text-sm text-left text-gray-500 border-[#DBDADE] border ">
                             <thead class="text-xs ">
                                 <tr class="bg-[#F7F7FC]">
                                     <th scope="col" class="px-4 py-3" ">Nr.</th>
-                                    <th scope="col" class="px-4 py-3 cursor-pointer  border-r-2 border-y-2 border-[#DBDADE]"
+                                    <th scope="col" class="px-4 py-3 cursor-pointer  border-r border-y border-[#DBDADE]"
                                         wire:click="setSortBy('created_at')">
                                         <div class="flex gap-x-3">
                                             <h1>Datum</h1>
@@ -32,7 +32,7 @@
                     </div>
 
                     </th>
-                    <th scope="col" class="px-4 py-3 cursor-pointer border-r-2 border-y-2 border-[#DBDADE] "
+                    <th scope="col" class="px-4 py-3 cursor-pointer border-r border-y border-[#DBDADE] "
                         wire:click="setSortBy('order_number')">
                         <div class="flex gap-x-3">
                             <h1>Bestelnummer</h1>
@@ -47,7 +47,7 @@
                             </svg>
                         </div>
                     </th>
-                    <th scope="col" class="px-4 py-3 cursor-pointer border-r-2 border-y-2 border-[#DBDADE]"
+                    <th scope="col" class="px-4 py-3 cursor-pointer border-r border-y border-[#DBDADE]"
                         wire:click="setSortBy('order_number')">
                         <div class="flex gap-x-3">
                             <h1>Ordernummer</h1>
@@ -62,7 +62,7 @@
                             </svg>
                         </div>
                     </th>
-                    <th scope="col" class="px-4 py-3 cursor-pointer border-r-2 border-y-2 border-[#DBDADE]"
+                    <th scope="col" class="px-4 py-3 cursor-pointer border-r border-y border-[#DBDADE]"
                         wire:click="setSortBy('status')">
                         <div class="flex gap-x-3">
                             <h1>Status</h1>
@@ -77,7 +77,7 @@
                             </svg>
                         </div>
                     </th>
-                    <th scope="col" class="px-4 py-3 cursor-pointer border-r-2 border-y-2 border-[#DBDADE]"
+                    <th scope="col" class="px-4 py-3 cursor-pointer border-r border-y border-[#DBDADE]"
                         wire:click="setSortBy('payment')">
                         <div class="flex gap-x-3">
                             <h1>Betaling</h1>
@@ -99,29 +99,29 @@
                     <tbody>
                         @foreach ($orders as $key => $order)
                             <tr class="text-left border-b-2 border-[#DBDADE]  ">
-                                <td class="px-4 py-3 font-medium odd:border-r-2 ">
+                                <td class="px-4 py-3 font-medium odd:border-r ">
                                     {{ $key + 1 }}
                                 </td>
-                                <td class="px-4 py-3 odd:border-r-2 ">{{ $order->created_at->format('d/m/Y') }}</td>
-                                <td class="px-4 py-3 text-green-500 odd:border-r-2">{{ $order->order_number }}</td>
-                                <td class="px-4 py-3 odd:border-r-2">#{{ $order->order_number }}</td>
+                                <td class="px-4 py-3 odd:border-r ">{{ $order->created_at->format('d/m/Y') }}</td>
+                                <td class="px-4 py-3 text-green-500 odd:border-r">{{ $order->order_number }}</td>
+                                <td class="px-4 py-3 odd:border-r">#{{ $order->order_number }}</td>
                                 @if ($order->status == 'placed')
-                                    <td class="px-4 py-3 text-blue-500 odd:border-r-2">
+                                    <td class="px-4 py-3 text-blue-500 odd:border-r">
                                         <p class="inline-block px-2 py-2 bg-blue-100 rounded-md">Bestelling geplaatst
                                         </p>
                                     </td>
                                 @elseif ($order->status == 'delivered')
-                                    <td class="px-4 py-3 text-green-500 odd:border-r-2">
+                                    <td class="px-4 py-3 text-green-500 odd:border-r">
                                         <p class="px-2 py-2 bg-green-100 rounded-md">Afgeleverd (POD)</p>
                                     </td>
                                 @elseif ($order->status == 'transport')
-                                    <td class="px-4 py-3 text-yellow-500 odd:border-r-2">
+                                    <td class="px-4 py-3 text-yellow-500 odd:border-r">
                                         <p class="px-2 py-2 bg-yellow-100 rounded-md">Transport</p>
                                     </td>
                                 @endif
 
                                 @if ($order->payment == 'waiting')
-                                    <td class="px-4 py-3 text-yellow-500 odd:border-r-2">
+                                    <td class="px-4 py-3 text-yellow-500 odd:border-r">
                                         <div class="flex gap-x-2">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -133,7 +133,7 @@
                                         </div>
                                     </td>
                                 @elseif ($order->payment == 'success')
-                                    <td class="px-4 py-3 text-green-500 odd:border-r-2">
+                                    <td class="px-4 py-3 text-green-500 odd:border-r">
                                         <div class="flex gap-x-2">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -145,7 +145,7 @@
                                         </div>
                                     </td>
                                 @elseif ($order->payment == 'dismissed')
-                                    <td class="px-4 py-3 text-red-500 odd:border-r-2">
+                                    <td class="px-4 py-3 text-red-500 odd:border-r">
                                         <div class="flex gap-x-2">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -179,7 +179,7 @@
                                     </td>
                                 @endif
 
-                                <td class=" odd:border-r-2">
+                                <td class=" odd:border-r">
                                     <div class="flex items-center justify-center">
                                         <button class="px-3 py-1 "><svg width="21" height="20"
                                                 viewBox="0 0 21 20" fill="none"

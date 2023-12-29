@@ -1,9 +1,10 @@
 <x-app-layout>
-    <div class="px-[150px] max-small:px-5 py-[80px]">
+   <div class="py-[80px]">
+    <div class="container mx-auto sm:px-[72px] px-[37px]">
 
-        <h1 class="mb-12 text-[32px] font-bold text-center">Bestel nu</h1>
+        <h1 class="sm:text-[32px] text-2xl font-bold text-center">Bestel nu</h1>
 
-        <div class="flex justify-center py-10">
+        <div class="flex justify-center py-[48px]">
 
             <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_32_4678)">
@@ -21,7 +22,7 @@
 
         </div>
 
-        <div class="mb-8 text-center">
+        <div class="flex flex-col max-w-[634px] items-center mx-auto">
             <button href="{{ route('order') }}" wire:navigate class="py-3 px-4 bg-[#F1AF33] text-black text-sm">
                 Bestelling on hold. Zie hieronder.
 
@@ -38,9 +39,9 @@
                 </h1>
             </div>
 
-            <div class="container px-10 mx-auto my-6 bg-white">
+            <div class="">
                 <table class="min-w-full border-collapse table-auto ">
-                    <thead class="border-b ">
+                    <thead class="border bg-[#F7F7FC]">
                         <tr>
                             <th class="px-4 py-2 text-center border-r">Uw kredietlimiet</th>
                             <th class="px-4 py-2 text-center border-r">Gebruikt krediet</th>
@@ -48,7 +49,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="text-center border-b">
+                        <tr class="text-center border">
                             <td class="px-4 py-2 border-r">€40.000</td>
                             <td class="px-4 py-2 border-r">€43.000</td>
                             <td class="px-4 py-2 text-red-500">€3.000</td>
@@ -56,7 +57,7 @@
                     </tbody>
                 </table>
 
-                <h1 class="py-6 text-xs">Er is onvoldoende leverancierskrediet. U kan de oudste factuur betalen en het
+                <h1 class="text-xs text-center mb-[48px] mt-[24px]">Er is onvoldoende leverancierskrediet. U kan de oudste factuur betalen en het
                     order opnieuw
                     ingeven 24u na betaling. U kan zich eveneens rechtstreeks via mail wenden aan ons.</h1>
             </div>
@@ -73,6 +74,7 @@
 
 
     </div>
+   </div>
     <livewire:layout.image>
     <livewire:layout.footer>
 

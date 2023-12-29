@@ -25,7 +25,7 @@ new #[Layout('layouts.app')] class extends Component {
 }; ?>
 
 <div>
-    <div class="container max-w-lg px-6 py-20 mx-auto  medium:mb-[200px]">
+    <div class="container mx-auto my-[72px] sm:w-[412px] w-[250px]">
         <h1 class="mb-6 text-[32px] font-bold text-center">Inloggen</h1>
 
         <!-- Session Status -->
@@ -86,5 +86,8 @@ new #[Layout('layouts.app')] class extends Component {
                         class="underline" href="{{ route('register') }}" wire:navigate>Registreer nu</a></span></div>
         </form>
     </div>
-    <livewire:layout.footer>
+    <div class="mt-[200px]">
+        <livewire:layout.footer>
+    </div>
+    
 </div>

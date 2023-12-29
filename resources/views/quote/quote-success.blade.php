@@ -1,9 +1,11 @@
 <x-app-layout>
     <div class="py-[80px]">
-        <div class="px-[200px] max-small:px-5">
-            <h1 class="mb-12 text-[32px] font-bold text-center">Offerte aanvragen</h1>
+        <div class="container mx-auto sm:px-[72px] px-[37px] ">
+           
+            <h1 class="sm:text-[32px] text-2xl font-bold text-center ">Offerte aanvragen</h1>
+            <div class="flex justify-center py-[48px]">
 
-            <div class="flex justify-center py-10">
+              
 
                 <svg width="100" height="64" viewBox="0 0 100 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -25,29 +27,33 @@
                 </svg>
 
             </div>
-            <div class="my-8 text-center">
+            <div class="text-center ">
                 <a href="{{ route('quote') }}" wire:navigate class=" py-3 px-4  bg-[#338734] text-white">
                     {{ __('Offerte succesvol aangevraagd') }}
                 </a>
-                <h1 class="mt-12 mb-6 text-lg font-black text-left">Volgende stappen</h1>
-                <h1 class="text-xs text-left">Fugiat aute reprehenderit Lorem reprehenderit qui adipisicing. Cillum id
-                    id irure proident reprehenderit incididunt
-                    excepteur do aliquip esse excepteur mollit ad id est consectetur velit. Quis eiusmod do eiusmod sit
-                    nostrud magna
-                    dolor esse est dolore sunt excepteur exercitation nisi occaecat. Ea tempor mollit ut labore aliquip
-                    velit culpa irure
-                    fugiat labore deserunt commodo amet exercitation nulla quis aute quis.Ipsum deserunt Lorem do non
-                    duis adipisicing
-                    anim incididunt ex id excepteur cupidatat sit la</h1>
+                <div class="w-[634px]  mx-auto">
+                    <h1 class=" mb-6 text-[16px] font-black text-left mt-[72px]">Volgende stappen</h1>
+                    <h1 class="text-[12px] text-left">Fugiat aute reprehenderit Lorem reprehenderit qui adipisicing. Cillum id
+                        id irure proident reprehenderit incididunt
+                        excepteur do aliquip esse excepteur mollit ad id est consectetur velit. Quis eiusmod do eiusmod sit
+                        nostrud magna
+                        dolor esse est dolore sunt excepteur exercitation nisi occaecat. Ea tempor mollit ut labore aliquip
+                        velit culpa irure
+                        fugiat labore deserunt commodo amet exercitation nulla quis aute quis.Ipsum deserunt Lorem do non
+                        duis adipisicing
+                        anim incididunt ex id excepteur cupidatat sit la</h1>
+                </div>
+               
             </div>
         </div>
 
 
 
-        <livewire:layout.image>
-
+      
 
     </div>
+    <livewire:layout.image>
+
     <livewire:layout.footer>
 
 </x-app-layout>
