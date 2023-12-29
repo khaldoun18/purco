@@ -44,7 +44,7 @@ new class extends Component
 
         $user->save();
 
-        $this->dispatch('profile-updated', first_name: $user->first_name, last_name:$user->last_name);
+        $this->dispatch('profile-updated', first_name: $user->first_name, last_name:$user->last_name ,email: $user->email);
     }
 
     /**

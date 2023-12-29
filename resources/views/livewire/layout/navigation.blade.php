@@ -78,7 +78,8 @@ new class extends Component {
                                             first_name: '{{ auth()->user()->first_name }}',
                                             last_name: '{{ auth()->user()->last_name }}'
                                         }"
-                                            x-text="`${first_name.substring(0,1)}${last_name.substring(0,1)}`.toUpperCase()">
+                                            x-text="`${first_name.substring(0,1)}${last_name.substring(0,1)}`.toUpperCase()"
+                                            x-on:profile-updated.window="first_name = $event.detail.first_name; last_name = $event.detail.last_name">
                                         </div>
                                     </div>
                                     <!-- User's full name -->
@@ -162,9 +163,10 @@ new class extends Component {
         <div class="pt-4 pb-1 border-t border-gray-200">
             @auth
                 <div class="px-4">
-                    <div class="text-base font-medium text-gray-800" x-data="{{ json_encode(['name' => auth()->user()->name]) }}" x-text="name"
-                        x-on:profile-updated.window="name = $event.detail.name"></div>
-                    <div class="text-sm font-medium text-gray-500">{{ auth()->user()->email }}</div>
+                    <div class="text-base font-medium text-gray-800" x-data="{{ json_encode(['first_name' => auth()->user()->first_name]) }}" x-text="first_name"
+                        x-on:profile-updated.window="first_name = $event.detail.first_name"></div>
+                    <div class="text-sm font-medium text-gray-500" x-data="{{ json_encode(['email' => auth()->user()->email]) }}" x-text="email"
+                        x-on:profile-updated.window="email = $event.detail.email"></div>
                 </div>
 
                 <div class="mt-3 space-y-1">

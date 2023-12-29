@@ -122,7 +122,11 @@ class OrderRequest extends Component
             'address_number' => 'required',
             'postcode' => ['required', 'string', 'max:255', PostalCode::for('LB')->or('BE')],
             'city' => 'required'
-        ]);
+        ],
+    [
+        'quotes.*.volume' => 'select a valid volume',
+    ]
+    );
 
         try {
             DB::beginTransaction();

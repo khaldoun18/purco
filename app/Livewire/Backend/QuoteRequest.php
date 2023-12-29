@@ -54,7 +54,13 @@ class QuoteRequest extends Component
             'remarks' => 'nullable|string',
             'acceptTerms' => 'accepted',
             'return_package' => 'boolean',
-        ]);
+        ],
+        [
+            [
+                'quotes.*.volume' => 'select a valid volume',
+            ]
+        ]
+    );
 
         
         foreach ($this->quotes as $quote) {

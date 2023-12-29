@@ -9,11 +9,11 @@ use function Livewire\Volt\{state};
 <div class="container mx-auto mb-[72px]">
 
 
-    <div class="relative mt-[48px] mb-[30px] flex flex-col sm:max-w-[1296px]  items-start gap-[10px]">
-        <img class="p-0 bg-center bg-no-repeat bg-cover sm:max-w-[854px] 39px 72px 767px"
+    <div class="relative mt-[48px] mb-[30px] flex flex-col lg:max-w-[1296px]  items-start gap-[10px]">
+        <img class="p-0 bg-center bg-no-repeat bg-cover lg:max-w-[854px] 39px 72px 767px"
             src="{{ asset('images/Figure.png') }}" alt="">
         <div
-            class="sm:absolute right-0 flex flex-col items-center gap-8 sm:py-[64px]  bg-gray-200 top-[88px] sm:w-[512px] w-full">
+            class="lg:absolute mx-auto right-0 flex flex-col items-center gap-8 sm:py-[64px]  bg-gray-200 top-[88px] sm:w-[512px] w-full">
             <p class="font-semibold leading-7 text-center text-gray-800 text-md sm:text-2xl">
                 Vragen? Contacteer ons!
             </p>
