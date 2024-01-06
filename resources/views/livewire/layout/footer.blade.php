@@ -5,10 +5,10 @@ use function Livewire\Volt\{state};
 //
 
 ?>
-<div class="relative">
+<div class="relative ">
     <div class="grid px-4 mt-12 medium:grid-cols-5 gap-x-10 max-small:text-center lg:px-16">
         <div class="max-small:flex max-small:justify-center max-small:mb-4">
-            <x-application-logo class="w-8"></x-application-logo>
+            <img class="w-[196px] h-[68px]" src="{{ asset('images/logov2.jpg') }}" alt="">
         </div>
         <div>
             <h1 class="text-lg font-black">Contact</h1>
@@ -71,7 +71,7 @@ use function Livewire\Volt\{state};
     </div>
     <hr class="border-1 border-[#313131]">
 
-    <div class="flex justify-between px-4 mt-3 lg:px-16">
+    <div class="flex justify-between px-4 my-[16px] lg:px-16">
         <h1 class="text-sm text-muted">© Purco 2023-Webdesign <a href="https://www.webit.be" target="_blank"
                 rel="noopener noreferrer">Webit</a></h1>
         <h1 class="text-sm text-muted"><a href="">Privacy</a> | <a href="">Cookiebeleid</a></h1>

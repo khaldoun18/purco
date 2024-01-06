@@ -20,12 +20,9 @@ new class extends Component {
     <div class="px-4 lg:px-16">
         <div class="flex items-center justify-between h-[80px]">
             <a href="{{ route('dashboard') }}" wire:navigate>
-                <x-application-logo class="block w-auto text-gray-800 fill-current h-9" />
+                <x-application-logo  />
             </a>
-            <div class="flex ">
-
-            </div>
-
+       
 
             <div class="flex ">
 
@@ -61,67 +58,68 @@ new class extends Component {
 
                 </div>
 
-            </div>
-
-            <!-- Settings Dropdown -->
-            <div class="hidden lg:flex lg:items-center lg:ms-6 whitespace-nowrap">
-                @auth
-                    <x-dropdown align="right" width="48">
-                        <x-slot name="trigger">
-                            <button
-                                class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none">
-                                <div class="flex items-center">
-                                    <!-- Initials circle -->
-                                    <div
-                                        class="flex items-center justify-center w-8 h-8 text-white bg-green-600 rounded-full">
+                <div class="hidden lg:flex lg:items-center lg:ms-6 whitespace-nowrap">
+                    @auth
+                        <x-dropdown align="right" width="48">
+                            <x-slot name="trigger">
+                                <button
+                                    class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none">
+                                    <div class="flex items-center">
+                                        <!-- Initials circle -->
+                                        <div
+                                            class="flex items-center justify-center w-8 h-8 text-white bg-green-600 rounded-full">
+                                            <div x-data="{
+                                                first_name: '{{ auth()->user()->first_name }}',
+                                                last_name: '{{ auth()->user()->last_name }}'
+                                            }"
+                                                x-text="`${first_name.substring(0,1)}${last_name.substring(0,1)}`.toUpperCase()"
+                                                x-on:profile-updated.window="first_name = $event.detail.first_name; last_name = $event.detail.last_name">
+                                            </div>
+                                        </div>
+                                        <!-- User's full name -->
                                         <div x-data="{
                                             first_name: '{{ auth()->user()->first_name }}',
                                             last_name: '{{ auth()->user()->last_name }}'
-                                        }"
-                                            x-text="`${first_name.substring(0,1)}${last_name.substring(0,1)}`.toUpperCase()"
-                                            x-on:profile-updated.window="first_name = $event.detail.first_name; last_name = $event.detail.last_name">
+                                        }" x-text="`${first_name} ${last_name}`"
+                                            x-on:profile-updated.window="first_name = $event.detail.first_name; last_name = $event.detail.last_name"
+                                            class="ml-2 font-semibold">
                                         </div>
+                                        <!-- Dropdown icon -->
+                                        <svg class="w-4 h-4 ml-1 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
                                     </div>
-                                    <!-- User's full name -->
-                                    <div x-data="{
-                                        first_name: '{{ auth()->user()->first_name }}',
-                                        last_name: '{{ auth()->user()->last_name }}'
-                                    }" x-text="`${first_name} ${last_name}`"
-                                        x-on:profile-updated.window="first_name = $event.detail.first_name; last_name = $event.detail.last_name"
-                                        class="ml-2 font-semibold">
-                                    </div>
-                                    <!-- Dropdown icon -->
-                                    <svg class="w-4 h-4 ml-1 fill-current" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-
-                            </button>
-                        </x-slot>
-
-                        <x-slot name="content">
-                            <x-dropdown-link :href="route('profile')" wire:navigate>
-                                {{ __('Profile') }}
-                            </x-dropdown-link>
-
-                            <!-- Authentication -->
-                            <button wire:click="logout" class="w-full text-start">
-                                <x-dropdown-link>
-                                    {{ __('Log Out') }}
+    
+                                </button>
+                            </x-slot>
+    
+                            <x-slot name="content">
+                                <x-dropdown-link :href="route('profile')" wire:navigate>
+                                    {{ __('Profile') }}
                                 </x-dropdown-link>
-                            </button>
-                        </x-slot>
-                    </x-dropdown>
-                @else
-                    <x-nav-link class="h-10 " :href="route('login')" wire:navigate>
-                        {{ __('Login') }}
-                    </x-nav-link>
-                @endauth
-
+    
+                                <!-- Authentication -->
+                                <button wire:click="logout" class="w-full text-start">
+                                    <x-dropdown-link>
+                                        {{ __('Log Out') }}
+                                    </x-dropdown-link>
+                                </button>
+                            </x-slot>
+                        </x-dropdown>
+                    @else
+                        <x-nav-link class="h-10 " :href="route('login')" wire:navigate>
+                            {{ __('Login') }}
+                        </x-nav-link>
+                    @endauth
+    
+                </div>
             </div>
+
+            <!-- Settings Dropdown -->
+      
 
             <!-- Hamburger -->
             <div class="flex items-center -me-2 lg:hidden">

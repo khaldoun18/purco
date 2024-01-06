@@ -2,69 +2,71 @@
     <h1 class="sm:text-[32px] text-2xl font-bold text-center mb-[48px]">Offerte aanvragen</h1>
 
     <form wire:submit.prevent="submit">
-        <h1 class=" text-[20px] font-bold">Overzicht offerteaanvraag</h1>
+        <h1 class=" text-[20px] text-[#313131] font-bold">Overzicht offerteaanvraag</h1>
         <div class="my-[20px]">
-            <label for="desired_date" class="block text-sm font-medium text-gray-700">Gewenste levertermijn*</label>
+            <x-input-label  :value="__('Gewenste levertermijn*')" />
             <input wire:model="desired_date" id="desired_date" type="date"
                 class="block w-40 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500"
                 required>
             <x-input-error :messages="$errors->get('desired_date')" class="mt-2" />
         </div>
 
-        <p class="my-6 text-xs font-bold text-gray-600">*Onze levertermijn is 48h werkdagen na bestelling voor 16h in België;
+        <p class="my-6 text-[14px] leading-5 font-bold text-[#313131]">*Onze levertermijn is 48h werkdagen na bestelling voor 16h in België;
             onder vbh van stock en zonder engagement.</p>
-
-        @foreach ($quotes as $index => $quote)
-            <div class="flex items-center space-x-4 my-[24px] whitespace-nowrap">
-                <div class="flex-1">
-                    <label class="block text-sm font-medium text-gray-700">Artikel</label>
-                    <select wire:model="quotes.{{ $index }}.product"
-                        class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500"
-                        required>
-                        <option value="">Kies een product</option>
-                        @foreach ($products as $product)
-                            <option value="{{ $product['id'] }}">{{ $product['name'] }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="flex-1">
-                    <label class="block text-sm font-medium text-gray-700">Volume (KG)</label>
-                    <input wire:model="quotes.{{ $index }}.volume" type="text"
-                        class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500"
-                        min="0" required>
-                </div>
-                <div class="flex-1">
-                    <label class="block text-sm font-medium text-gray-700">Verpakking</label>
-                    <select wire:model="quotes.{{ $index }}.packaging"
-                        class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500"
-                        required>
-                        <option value="">Kies een verpakking</option>
-                        @foreach ($packagingOptions as $option)
-                            <option>{{ $option }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                @if (count($quotes) > 1)
-                    <button wire:click.prevent="removeQuote({{ $index }})" type="button"
-                        class="text-red-500 hover:text-red-700">
-                        Verwijder
-                    </button>
-                @endif
-            </div>
-            <div class="flex justify-center">
-                <x-input-error :messages="$errors->get('quotes.' . $index . '.volume')" class="mt-2" />
-            </div>
-        @endforeach
+<div class="bg-[#F2F2F2]">
+    @foreach ($quotes as $index => $quote)
+    <div class="flex items-center space-x-4 my-[24px] whitespace-nowrap ">
+        <div class="flex-1">
+            <x-input-label  :value="__('Artikel')" />
+            <select wire:model="quotes.{{ $index }}.product"
+                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500"
+                required>
+                <option value="">Kies een product</option>
+                @foreach ($products as $product)
+                    <option value="{{ $product['id'] }}">{{ $product['name'] }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="flex-1">
+            <x-input-label  :value="__('Volume (kg)')" />
+            <input wire:model="quotes.{{ $index }}.volume" type="text"
+                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500"
+                min="0" required>
+        </div>
+        <div class="flex-1">
+            <x-input-label  :value="__('Verpakking')" />
+            <select wire:model="quotes.{{ $index }}.packaging"
+                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500"
+                required>
+                <option value="">Kies een verpakking</option>
+                @foreach ($packagingOptions as $option)
+                    <option>{{ $option }}</option>
+                @endforeach
+            </select>
+        </div>
+        @if (count($quotes) > 1)
+            <button wire:click.prevent="removeQuote({{ $index }})" type="button"
+                class="text-red-500 hover:text-red-700">
+                Verwijder
+            </button>
+        @endif
+    </div>
+    <div class="flex justify-center">
+        <x-input-error :messages="$errors->get('quotes.' . $index . '.volume')" class="mt-2" />
+    </div>
+@endforeach
+</div>
+       
 
         <div class="flex justify-start mb-[24px]">
             <button wire:click.prevent="addQuote" type="button"
-                class="text-[#338734] hover:text-green-700 underline underline-offset-2">
+                class="text-[#338734] hover:text-green-700 underline underline-offset-8">
                 + Artikel toevoegen
             </button>
         </div>
 
         <div class="mb-[20px]">
-            <label for="remarks" class="block text-sm font-medium text-gray-700">Opmerkingen</label>
+            <x-input-label for="password" :value="__('Opmerkingen')" />
             <textarea wire:model="remarks" id="remarks" rows="4"
                 class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500"></textarea>
         </div>
@@ -92,7 +94,7 @@
         <div class="mt-[32px] mb-[30px]">
            
             <button type="submit"
-                class="inline-flex items-center px-6 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-[#CC181B] hover:bg-red-600 focus:outline-none ">
+                class="inline-flex items-center px-6 py-2 border border-transparent text-base font-medium  shadow-sm text-white bg-[#CC181B] hover:bg-red-600 focus:outline-none ">
                 Offerte aanvragen
             </button>
         </div>

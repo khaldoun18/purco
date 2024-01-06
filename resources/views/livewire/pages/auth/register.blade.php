@@ -72,7 +72,7 @@ new #[Layout('layouts.app')] class extends Component {
 }; ?>
 
 <div>
-    <div class="container mx-auto medium:px-[100px] large:px-[80px] px-[50px] py-4 my-[72px]">
+    <div class="container mx-auto  md:w-[856px] max-small:px-4  py-4 my-[72px]">
         <div class="flex text-red-600 ">
             <a class="flex items-center ml-2 font-bold" href="{{ route('welcome') }}" wire:navigate>
                 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"

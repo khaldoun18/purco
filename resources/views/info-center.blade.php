@@ -30,7 +30,7 @@
             </div>
             <div class="my-8 overflow-x-auto">
                 <table class="min-w-full bg-white border-2 border-[#F7F7FC] mx-auto">
-                    <thead class="bg-gray-50">
+                    <thead class="bg-[#F7F7FC]">
                         <tr class="border-2">
                             <th class="px-4 py-3 text-sm font-semibold text-center border ">Datum</th>
                             <th class="px-4 py-3 text-sm font-semibold text-center border ">Titel document</th>
@@ -39,7 +39,7 @@
                     </thead>
                     <tbody class="text-gray-700">
 
-                        <tr class="even:bg-[#DBDADE]">
+                        <tr class="even:bg-[#F7F7FC]">
                             <td class="px-4 py-3 text-center border">06/01/2023</td>
                             <td class="px-4 py-3 text-center border">Offerte: Lorem ipsum</td>
                             <td class="flex justify-center px-4 py-3">
@@ -52,7 +52,7 @@
 
                             </td>
                         </tr>
-                        <tr class="even:bg-[#DBDADE]">
+                        <tr class="even:bg-[#F7F7FC]">
                             <td class="px-4 py-3 text-center border">06/01/2023</td>
                             <td class="px-4 py-3 text-center border">Offerte: Lorem ipsum</td>
                             <td class="flex justify-center px-4 py-3 ">
@@ -65,7 +65,7 @@
 
                             </td>
                         </tr>
-                        <tr class="even:bg-[#DBDADE]">
+                        <tr class="even:bg-[#F7F7FC]">
                             <td class="px-4 py-3 text-center border">06/01/2023</td>
                             <td class="px-4 py-3 text-center border">Offerte: Lorem ipsum</td>
                             <td class="flex justify-center px-4 py-3 ">

@@ -56,9 +56,9 @@ class QuoteRequest extends Component
             'return_package' => 'boolean',
         ],
         [
-            [
+            
                 'quotes.*.volume' => 'select a valid volume',
-            ]
+            
         ]
     );
 

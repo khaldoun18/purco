@@ -13,11 +13,13 @@
                             class="w-full text-sm text-left text-gray-500 border-[#DBDADE] border ">
                             <thead class="text-xs ">
                                 <tr class="bg-[#F7F7FC]">
-                                    <th scope="col" class="px-4 py-3" ">Nr.</th>
-                                    <th scope="col" class="px-4 py-3 cursor-pointer  border-r border-y border-[#DBDADE]"
+                                    <th scope="col" class="px-4 py-3 border-b border-[#DBDADE]" ">
+                                        <h1 class="text-[14px] text-[#313131] font-semibold">Nr.</h1>
+                                    </th>
+                                    <th scope="col" class="px-4 py-3 cursor-pointer   border-y border-[#DBDADE]"
                                         wire:click="setSortBy('created_at')">
                                         <div class="flex gap-x-3">
-                                            <h1>Datum</h1>
+                                            <h1 class="text-[14px] text-[#313131] font-semibold">Datum</h1>
                                             <svg width="6" height="12" viewBox="0 0 6 12" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -32,10 +34,10 @@
                     </div>
 
                     </th>
-                    <th scope="col" class="px-4 py-3 cursor-pointer border-r border-y border-[#DBDADE] "
+                    <th scope="col" class="px-4 py-3 cursor-pointer  border-y border-[#DBDADE] "
                         wire:click="setSortBy('order_number')">
                         <div class="flex gap-x-3">
-                            <h1>Bestelnummer</h1>
+                            <h1 class="text-[14px] text-[#313131] font-semibold">Bestelnummer</h1>
                             <svg width="6" height="12" viewBox="0 0 6 12" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -50,7 +52,7 @@
                     <th scope="col" class="px-4 py-3 cursor-pointer border-r border-y border-[#DBDADE]"
                         wire:click="setSortBy('order_number')">
                         <div class="flex gap-x-3">
-                            <h1>Ordernummer</h1>
+                            <h1 class="text-[14px] text-[#313131] font-semibold">Ordernummer</h1>
                             <svg width="6" height="12" viewBox="0 0 6 12" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -62,10 +64,10 @@
                             </svg>
                         </div>
                     </th>
-                    <th scope="col" class="px-4 py-3 cursor-pointer border-r border-y border-[#DBDADE]"
+                    <th scope="col" class="px-4 py-3 cursor-pointer  border-y border-[#DBDADE]"
                         wire:click="setSortBy('status')">
                         <div class="flex gap-x-3">
-                            <h1>Status</h1>
+                            <h1 class="text-[14px] text-[#313131] font-semibold">Status</h1>
                             <svg width="6" height="12" viewBox="0 0 6 12" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -80,7 +82,7 @@
                     <th scope="col" class="px-4 py-3 cursor-pointer border-r border-y border-[#DBDADE]"
                         wire:click="setSortBy('payment')">
                         <div class="flex gap-x-3">
-                            <h1>Betaling</h1>
+                            <h1 class="text-[14px] text-[#313131] font-semibold">Betaling</h1>
                             <svg width="6" height="12" viewBox="0 0 6 12" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -92,13 +94,14 @@
                             </svg>
                         </div>
                     </th>
-                    <th scope="col" class="px-4 py-3">Factuur</span>
+                    <th scope="col" class="px-4 py-3 border-b border-[#DBDADE]">
+                        <h1 class="text-[14px] text-[#313131] font-semibold">Factuur</h1>
                     </th>
                     </tr>
                     </thead>
                     <tbody>
                         @foreach ($orders as $key => $order)
-                            <tr class="text-left border-b-2 border-[#DBDADE]  ">
+                            <tr class="text-left border-b-2 border-[#DBDADE] even:bg-[#F2F2F2] ">
                                 <td class="px-4 py-3 font-medium odd:border-r ">
                                     {{ $key + 1 }}
                                 </td>

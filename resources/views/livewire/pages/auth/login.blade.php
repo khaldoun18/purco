@@ -34,7 +34,7 @@ new #[Layout('layouts.app')] class extends Component {
         <form wire:submit="login">
             <!-- Email Address -->
             <div class="mt-4">
-                <x-input-label for="email" :value="__('Email')" />
+                <x-input-label  for="email" :value="__('Email')" />
                 <x-text-input wire:model="form.email" id="email" class="block w-full mt-1" type="email" name="email"
                     required autofocus />
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
@@ -77,9 +77,7 @@ new #[Layout('layouts.app')] class extends Component {
                     </a>
                 @endif --}}
             <div class="">
-                <x-primary-button class="flex items-center justify-center w-full my-[32px]">
-                    Inloggen
-                </x-primary-button>
+               <button class="bg-[#CC181B] text-[16px] font-semibold text-[#FFF] flex  justify-center items-center px-[32px] py-[16px] self-stretch w-full my-[32px] font-">Inloggen</button>
 
             </div>
             <div class="mt-3 font-bold text-center">Heb je nog geen account? <span class="text-sm text-[#338734]"><a
