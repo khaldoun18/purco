@@ -29,7 +29,7 @@
            
             </div>
             <div class="my-8 overflow-x-auto">
-                <table class="min-w-full bg-white border-2 border-[#F7F7FC] mx-auto">
+                <table class=" bg-white border-2 border-[#F7F7FC] mx-auto lg:w-[744px] whitespace-nowrap">
                     <thead class="bg-[#F7F7FC]">
                         <tr class="border-2">
                             <th class="px-4 py-3 text-sm font-semibold text-center border ">Datum</th>

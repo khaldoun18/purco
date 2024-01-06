@@ -196,7 +196,7 @@
             </div>
 
 
-
+            <div class="flex flex-col items-center justify-center my-[28px] sm:my-[48px] text-center bg-[#EEFFF1]">
             <div
                 class="flex flex-col items-center justify-center my-[28px] sm:my-[48px] leading-6 text-center bg-[#EEFFF1]">
                 <h1 class="mt-3 lg:text-[24px] font-semibold max-small:text-sm">Vragen? Contacteer ons!</h1>
@@ -229,7 +229,7 @@
                         <h1>email@email.com</h1>
                     </div>
                 </div>
-
+            </div>
             </div>
 
         </div>

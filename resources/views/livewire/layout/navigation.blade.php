@@ -58,12 +58,12 @@ new class extends Component {
 
                 </div>
 
-                <div class="hidden lg:flex lg:items-center lg:ms-6 whitespace-nowrap">
+                <div class="hidden lg:flex lg:items-center lg:ms-6 whitespace-nowrap ">
                     @auth
-                        <x-dropdown align="right" width="48">
+                        <x-dropdown align="right" width="48" >
                             <x-slot name="trigger">
                                 <button
-                                    class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none">
+                                    class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none ml-[20px]">
                                     <div class="flex items-center">
                                         <!-- Initials circle -->
                                         <div
@@ -110,7 +110,7 @@ new class extends Component {
                             </x-slot>
                         </x-dropdown>
                     @else
-                        <x-nav-link class="h-10 " :href="route('login')" wire:navigate>
+                        <x-nav-link class="h-10 ml-[72px]" :href="route('login')" wire:navigate>
                             {{ __('Login') }}
                         </x-nav-link>
                     @endauth
