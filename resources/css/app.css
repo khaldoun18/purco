@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.shadow-dashboard:hover{
+    border-radius: 12px;
+    background: #FFF;
+    box-shadow: 0px 8px 50px 0px rgba(0, 0, 0, 0.05);
+}

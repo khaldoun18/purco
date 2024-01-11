@@ -41,6 +41,10 @@ export default {
             fontFamily: {
                 sans: ['Roboto', 'sans-serif'],
             },
+            boxShadow: {
+                '3xl': '0px 8px 50px 0px rgba(0, 0, 0, 0.05)',
+              }
+        
         },
     },
     presets: [

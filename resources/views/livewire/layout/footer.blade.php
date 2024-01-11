@@ -5,7 +5,7 @@ use function Livewire\Volt\{state};
 //
 
 ?>
-<div class="relative ">
+<div class="relative">
     <div class="grid px-4 mt-12 medium:grid-cols-5 gap-x-10 max-small:text-center lg:px-16">
         <div class="max-small:flex max-small:justify-center max-small:mb-4">
             <img class="w-[196px] h-[68px]" src="{{ asset('images/logov2.jpg') }}" alt="">

@@ -37,5 +37,7 @@
 
 
     </div>
-    <livewire:layout.footer>
+    <div class="mt-[72px]">
+        <livewire:layout.footer>
+    </div>
 </x-app-layout>

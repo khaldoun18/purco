@@ -19,7 +19,7 @@
         <wireui:scripts />
     </head>
     <body class="font-sans antialiased text-[#313131] bg-white">
-        <div class="min-h-screen ">
+        <div class="">
             <livewire:layout.navigation />
 
             <!-- Page Heading -->
