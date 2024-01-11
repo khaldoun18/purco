@@ -57,7 +57,9 @@ class QuoteRequest extends Component
         ],
         [
             
-                'quotes.*.volume' => 'select a valid volume',
+            'quotes.*.volume' => 'select a valid volume',
+            'quotes.*.product' => 'select a valid product',
+            'quotes.*.packaging' => 'select a valid packaging',
             
         ]
     );

@@ -15,7 +15,7 @@ new class extends Component {
     }
 }; ?>
 
-<nav x-data="{ open: false }" class="">
+<nav x-data="{ open: false }" class="border-[#EEE] md:border-b">
     <!-- Primary Navigation Menu -->
     <div class="px-4 lg:px-16">
         <div class="flex items-center justify-between h-[80px]">
@@ -58,7 +58,7 @@ new class extends Component {
 
                 </div>
 
-                <div class="hidden lg:flex lg:items-center lg:ms-6 whitespace-nowrap ">
+                <div class="hidden lg:flex lg:items-center lg:ms-6 whitespace-nowrap">
                     @auth
                         <x-dropdown align="right" width="48" >
                             <x-slot name="trigger">

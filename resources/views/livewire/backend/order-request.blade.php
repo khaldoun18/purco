@@ -23,7 +23,7 @@
             </div>
         @endif
 
-<div class="bg-[#F2F2F2]">
+<div class="bg-[#F2F2F2] p-[12px]">
     @if (!$previous_order)
     @foreach ($quotes as $index => $quote)
         <div class="flex items-center space-x-4 my-[24px] whitespace-nowrap">
@@ -70,9 +70,9 @@
         </div>
     @endforeach
 
-    <div class="flex justify-start mb-[24px]">
+    <div class="flex justify-start my-[24px]">
         <button wire:click.prevent="addQuote" type="button"
-                class="text-[#338734] hover:text-green-700 underline underline-offset-8">
+                class="text-[#338734] hover:text-green-700 underline underline-offset-8 font-bold">
                 + Artikel toevoegen
             </button>
     </div>

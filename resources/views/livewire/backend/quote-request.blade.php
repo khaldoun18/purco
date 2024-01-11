@@ -11,9 +11,9 @@
             <x-input-error :messages="$errors->get('desired_date')" class="mt-2" />
         </div>
 
-        <p class="my-6 text-[14px] leading-5 font-bold text-[#313131]">*Onze levertermijn is 48h werkdagen na bestelling voor 16h in België;
+        <p class="mt-6 text-[14px] leading-5 font-bold text-[#313131]">*Onze levertermijn is 48h werkdagen na bestelling voor 16h in België;
             onder vbh van stock en zonder engagement.</p>
-<div class="bg-[#F2F2F2]">
+<div class="bg-[#F2F2F2]  p-[12px]">
     @foreach ($quotes as $index => $quote)
     <div class="flex items-center space-x-4 my-[24px] whitespace-nowrap ">
         <div class="flex-1">
@@ -58,7 +58,7 @@
 </div>
        
 
-        <div class="flex justify-start mb-[24px]">
+        <div class="flex justify-start my-[24px] font-bold">
             <button wire:click.prevent="addQuote" type="button"
                 class="text-[#338734] hover:text-green-700 underline underline-offset-8">
                 + Artikel toevoegen

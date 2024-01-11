@@ -3,9 +3,9 @@
         <h1 class="sm:text-[32px] text-2xl font-bold text-center mb-[48px]">Dashboard</h1>
         <div class="grid grid-cols-3 gap-x-[24px] gap-y-[24px]  max-small:grid-cols-2">
 
-            <div class="flex flex-col items-center justify-center text-center my-[28px] sm:my-[48px]">
+            <div class="flex flex-col items-center justify-center text-center ">
                 <a href="{{ route('quote') }}" wire:navigate>
-                    <div class="flex flex-col items-center justify-center text-center">
+                    <div class="flex flex-col items-center justify-center text-center py-[28px] sm:py-[48px]">
                         <svg width="70" height="70" viewBox="0 0 70 70" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d=" M18.937 67.9375H7.4375C4.33095 67.9375 1.8125 65.419 1.8125 62.3125V7.1875C1.8125
@@ -24,16 +24,16 @@
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
 
-                        <h1 class="my-[20px] font-semibold lg:text-[24px]">Offerte aanvragen</h1>
+                        <h1 class="my-[40px]  font-semibold lg:text-[24px]">Offerte aanvragen</h1>
                     </div>
 
                 </a>
             </div>
 
 
-            <div class="flex flex-col items-center justify-center sm:my-[48px] my-[28px]  text-center">
+            <div class="flex flex-col items-center justify-center text-center">
                 <a href="{{ route('order') }}" wire:navigate>
-                    <div class="flex flex-col items-center justify-center text-center">
+                    <div class="flex flex-col items-center justify-center text-center py-[28px] sm:py-[48px]">
                         <svg width="72" height="73" viewBox="0 0 72 73" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -59,16 +59,16 @@
                         </svg>
 
 
-                        <h1 class="my-[20px] font-semibold lg:text-[24px]">Bestel nu</h1>
+                        <h1 class="my-[40px] font-semibold lg:text-[24px]">Bestel nu</h1>
                     </div>
 
                 </a>
             </div>
 
 
-            <div class="flex flex-col items-center justify-center my-[28px] sm:my-[48px] text-center">
+            <div class="flex flex-col items-center justify-center text-center">
                 <a href="{{ route('my-orders') }}" wire:navigate>
-                    <div class="flex flex-col items-center justify-center text-center">
+                    <div class="flex flex-col items-center justify-center text-center py-[28px] sm:py-[48px]">
                         <svg width="72" height="73" viewBox="0 0 72 73" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_27_5839)">
@@ -122,7 +122,7 @@
                         </svg>
 
 
-                        <h1 class="my-[20px] font-semibold lg:text-[24px]">Mijn bestellingen</h1>
+                        <h1 class="my-[40px] font-semibold lg:text-[24px]">Mijn bestellingen</h1>
                     </div>
 
                 </a>
@@ -130,9 +130,9 @@
 
 
 
-            <div class="flex flex-col items-center justify-center my-[28px] sm:my-[48px] text-center">
+            <div class="flex flex-col items-center justify-center text-center">
                 <a href="{{ route('info-center') }}" wire:navigate>
-                    <div class="flex flex-col items-center justify-center text-center">
+                    <div class="flex flex-col items-center justify-center text-center my-[28px] sm:my-[48px]">
                         <svg width="72" height="73" viewBox="0 0 72 73" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -144,7 +144,7 @@
 
 
 
-                        <h1 class="my-[20px] font-semibold lg:text-[24px]">Info Center</h1>
+                        <h1 class="my-[40px] font-semibold lg:text-[24px]">Info Center</h1>
                     </div>
 
                 </a>
@@ -152,9 +152,9 @@
             </div>
 
 
-            <div class="flex flex-col items-center justify-center my-[28px] sm:my-[48px] text-center">
+            <div class="flex flex-col items-center justify-center text-center">
                 <a href="{{ route('profile') }}" wire:navigate>
-                    <div class="flex flex-col items-center justify-center text-center">
+                    <div class="flex flex-col items-center justify-center text-center my-[28px] sm:my-[48px]">
                         <svg width="72" height="73" viewBox="0 0 72 73" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_27_5876)">
@@ -184,7 +184,7 @@
                                 </clipPath>
                             </defs>
                         </svg>
-                        <h1 class="my-[20px] font-semibold lg:text-[24px]">Mijn profiel</h1>
+                        <h1 class="my-[40px] font-semibold lg:text-[24px]">Mijn profiel</h1>
                     </div>
 
 
